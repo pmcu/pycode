@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython_stdlib.js" integrity="sha256-Gnrw9tIjrsXcZSCh/wos5Jrpn0bNVNFJuNJI9d71TDs=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="table.css">
+
+    <title>Brython Demo</title>
+</head>
+<body onload="brython()">
+<h2>Brython Doc Tutorial</h2>
+<div id="container"></div>
+<div id="table-zone"></div>
+
+<script type="text/python" id="script0">
+import MyData
+from browser import document
+from browser import html
+from browser.html import TABLE, TR, TH, TD
+
+table = html.TABLE()
+row = html.TR()
+# Adding header cells
+row <= html.TH("Header1")
+row <= html.TH("Header2")
+# Appending the row to the table
+table <= row
+
+# Adding a first row
+row = html.TR()
+row <= html.TD("Data 1")
+row <= html.TD("Data 2")
+table <= row
+data3="dog box"
+data4="hat box"
+# Adding a first row
+row = html.TR()
+row <= html.TD(MyData.d1)
+row <= html.TD(MyData.d2)
+
+table <= row
+
+tableZone = document["table-zone"]
+tableZone <= table
+</script>
+</body>
+</html>
